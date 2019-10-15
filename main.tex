@@ -1,0 +1,294 @@
+% ****** Start of file apssamp.tex ******
+%
+%   This file is part of the APS files in the REVTeX 4.1 distribution.
+%   Version 4.1r of REVTeX, August 2010
+%
+%   Copyright (c) 2009, 2010 The American Physical Society.
+%
+%   See the REVTeX 4 README file for restrictions and more information.
+%
+% TeX'ing this file requires that you have AMS-LaTeX 2.0 installed
+% as well as the rest of the prerequisites for REVTeX 4.1
+%
+% See the REVTeX 4 README file
+% It also requires running BibTeX. The commands are as follows:
+%
+%  1)  latex apssamp.tex
+%  2)  bibtex apssamp
+%  3)  latex apssamp.tex
+%  4)  latex apssamp.tex
+%
+\documentclass[%
+ reprint,
+%superscriptaddress,
+%groupedaddress,
+%unsortedaddress,
+%runinaddress,
+%frontmatterverbose, 
+%preprint,
+%showpacs,preprintnumbers,
+%nofootinbib,
+%nobibnotes,
+%bibnotes,
+ amsmath,amssymb,
+ aps,nofootinbib
+%pra,
+%prb,
+%rmp,
+%prstab,
+%prstper,
+%floatfix,
+]{revtex4-1}
+\usepackage{dsfont}
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+\usepackage{color}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage{footmisc}
+\definecolor{lightred}{rgb}{1,0.5,0.5}
+\definecolor{lightgreen}{rgb}{0.5,1,0.5}
+\definecolor{lightblue}{rgb}{0.5,0.5,1}
+\definecolor{lightcyan}{rgb}{0.5,0.75,0.75}
+\definecolor{lightmagenta}{rgb}{0.75,0.5,0.75}
+\definecolor{customgreen}{rgb}{0.494,1,0.502}
+
+
+\newcommand{\mueV}{\mathinner{\mu\mathrm{eV}}}
+\newcommand{\meV}{\mathinner{\mathrm{meV}}}
+\newcommand{\eV}{\mathinner{\mathrm{eV}}}
+\newcommand{\keV}{\mathinner{\mathrm{keV}}}
+\newcommand{\MeV}{\mathinner{\mathrm{MeV}}}
+\newcommand{\GeV}{\mathinner{\mathrm{GeV}}}
+\newcommand{\TeV}{\mathinner{\mathrm{TeV}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{New DM Searches}
+\author{Lucas Kang, Anubhav Mathur, and Erwin H. Tanin}
+%\date{March 9, 2017}
+
+
+\maketitle
+
+
+
+\tableofcontents
+\section{Questions / To think about}
+\begin{itemize}
+\item Contributions from DM-nucleon vs DM-electron interactions to energy deposition.
+\item Ref. \cite{Grabowska:2018lnd} says the maximum momentum transfer that can be exchanged between $\chi$ and a nucleon is $\text{min}(\Lambda_\chi,m_{\rm N}v_{\rm DM})$ for form factor reasons. Does this still apply in our case? \textcolor{blue}{Seems to only apply for $\Delta p\gg \Lambda_\chi$.}
+\item The momentum $p$ of an object is highly frame dependent (in a non-relativistic way), which means that its de Broglie wavelength $\lambda\sim p^{-1}$ is frame dependent in a similar way. This seems weird.
+\end{itemize}
+ 
+ 
+ 
+\section{Useful Heuristics}
+\begin{itemize}
+    \item Cooling bounds on light mediators are essentially non-existent when $m_\phi\gg T_{\rm star}$ cause $\phi$ would be Boltzmann suppressed. 
+    \item Long-ranged pseudoscalar mediators give weak effects because they couple only to spins and spins are averaged out on large scales.
+    \item Dark matter nucleon's Bohr radius $\Lambda_\chi^{-1}\sim (\alpha_{\chi\chi}m_\chi)^{-1}$ (with $\alpha_{\chi\chi}$ the fine-structure constant of the dark matter self interaction), so assuming $\Lambda_\chi\sim m_\chi$ amounts to assuming that the dark matter sector is strongly coupled.
+    \item Should we take the nuclei and electrons as a group or independent entities when they are interacting with a dark blob? The key is to compare the typical momentum exchange in such a collision with the size of an atom. $\Delta p\sim \mu V_{\rm DM}\sim m_{\rm N}v_{\rm DM}\sim 1\MeV\sim (1\text{ nm})^{-1}$ (if $m_\chi\gg m_{\rm N}$). So, the answer is ``no", i.e. nuclei and electrons are separable.
+    \item \textcolor{blue}{Ionization- and scintillation-based experiments rely on the energy imparted on the SM probe per collision with a dark matter nucleon being larger than a certain threshold, e.g. ~100 keV for ionization. By contrast, sound wave detection experiments depend more on the total energy deposited to the detector by the whole blob.}
+
+\end{itemize}
+
+\section{Dark Matter with intermediate range mediator}
+Pieces:
+\begin{itemize}
+    \item $M_\chi\sim \GeV$ or you can vary it as you like. We can also vary the blob size $R$.
+    \item When $m_\phi^{-1}$ is shorter than the de-Broglie wavelength of the SM probe, the interation has to be described using QM.
+    \item $m_\phi^{-1}\gtrsim \mu\text{m}$ is well constrained by fifth force experiments.
+    \item Figure out whether we can regard the collisions as elastic. Check if the typical amount of energy exchanged in a collision is enough to produce SM particles or to excite internal dofs of nuclei. If not then elastic scattering is the dominant interaction channel.
+    \item Length scales: $R$, $N_\chi \Lambda_\chi^{-1}$, $m_\phi^{-1}$, $\Delta p^{-1}$, $p_{\rm N}^{-1}\sim 1 \MeV^{-1}$ (set by DM virial velocity and nucleon mass). We want $R\gg m_\phi^{-1}\gg p_{\rm N}^{-1}\gg \Lambda_\chi^{-1}$. What else?
+    \item The uncertainties in the positions of nuclei are of order $\delta x_{\rm N}\sim 1 \text{ fm}$ because they are constantly being "measured" by the surrounding electron cloud. Although $\delta p_{\rm N}\sim \delta (1\text{ fm})^{-1}\sim 200 \MeV$ is much larger than the typical momentum of nuclei in the blob's frame, it does not undermine our classical calculation. This $\delta p_{\rm N}$ represents the fast motion of individual nuclei inside a nucleus and what matters in our calculation is the momentum of the nucleus as a whole, i.e. the "center of mass momentum," and not of individual nuclei.
+    \item As long as
+    \begin{equation}
+        \frac{R}{1}\lesssim \frac{m_\phi^{-1}}{v_{\rm DM}}
+    \end{equation}
+    the blob acts like a rigid body during a collision with an SM probe. Otherwise, each collision may excite phonon modes in the blob.
+\end{itemize}
+
+Ref. \cite{Grabowska:2018lnd} considers mediators of masses lying in two separate ranges: long-ranged $R_{\rm E}^{-1}\lesssim m_\phi\lesssim (\mu\text{m})^{-1}$ and short-ranged $m_\phi>\TeV$. Here, long-ranged means $m_\phi^{-1}$ is much larger than the size of the dark matter blob, while short-ranged means $m_\phi$ is heavy enough that we can integrate $\phi$ out. But said choices were made largely for convenience (so that reliable statements on detectability can be made in these mass ranges). We would like to investigate mediators whose ranges lie in between the short-ranged and long-ranged ones considered in Ref. \cite{Grabowska:2018lnd}. Such intermediate-ranged mediators have ranges shorter than the size of the blob, $m_\phi^{-1}<R$, but are not short-ranged enough to yield contact interactions. We are particularly interested in $m_\phi\sim 100\keV$, at which the nucleon-mediator coupling $g_{N\phi}$ is barely constrained. While the size of a bosonic dark matter blob is independent of the number of its constituents $N_\chi$, Pauli exclusion forces a fermionic blob to grow in size as $N_\chi$ increases. In the case of bosonic dark matter such intermediate-ranged mediator only slightly enlarges the cross section with respect to the geometrical one. The fermionic case is more non-trivial and needs more thinking.
+
+
+
+
+A supermassive blob of dark matter passing through a volume of water may heat the water, creating acoustic waves which we can detect. The best sensitivity of current sound detector (hydrophone) is around $\text{keV/\AA}$. To estimate the maximum intensity we can extract out of a passing dark matter blob we can compute the rate of energy loss per unit length $dE/dx$ of the blob to water.
+
+
+
+
+\subsection{Drag force on the blob (classical)}
+In this calculation we assume 
+\begin{align}
+    \Lambda_\chi^{-1}\sim m_\chi^{-1}&\sim\GeV^{-1}\sim 0.2 \text{ fm}\nonumber\\
+    m_\phi^{-1}&\sim (100\keV)^{-1}\sim 10^{-2}\AA\nonumber\\
+    R\sim N_\chi^{1/3}\Lambda_\chi^{-1}&\sim \AA \nonumber\\
+    m_{\rm P}=N_{\rm P}m_{\rm N}&\sim 10 \GeV
+\end{align}
+Let us work in the reference frame where the blob is at rest and SM probes are coming towards it with typical momentum $p_{\rm P}\sim m_{\rm P} v_{\rm DM}\sim 10\MeV$. The potential energy of the SM probe under the influence of the blob can be obtained by integrating the Yukawa potentials sourced by the partons in the blob. Due to the exponentially decaying nature of Yukawa potential, each point in the blob only sees partons within a radius $\sim m_\phi^{-1}$. Hence, each point in the bulk of the blob is just like any other point and the potential energy of the probe as a function of its distance from the center of the blob looks like
+\begin{equation}
+    V(r)=\begin{cases}
+    -V_0, &r<R\\
+    0, &r>R
+    \end{cases}
+\end{equation}
+where near the boundary $r\approx R$ the potential drops to zero exponentially over a length scale of order $m_\phi^{-1}$ and $V_0$ is given by
+\begin{align}
+    V_0&=\int_0^\infty \left(4\pi r^2 dr\right)\left(\Lambda_\chi^3\right)\left(\frac{g_{\chi\phi}g_{\phi \rm P}}{4\pi}\frac{e^{-m_\phi r}}{r}\right)\nonumber\\
+    &\sim g_{\chi\phi}g_{\phi \rm P} \left(\frac{\Lambda_\chi}{m_\phi}\right)^2\Lambda_\chi
+\end{align}
+with $g_{\phi\rm P}=N_{\rm P}g_{\phi\rm N}$.
+
+Equating the energy $V_0$ gained by a probe when entering the blob with its kinetic energy change $m_{\rm P}v_{\rm DM}\Delta v$, we find the magnitude of its velocity change $\Delta v\sim V_0/(m_{\rm P} v_{\rm DM})$. The direction of this velocity change may vary, but generically it reorients the momentum of the probe by an angle $\theta\sim \Delta v/v_{\rm DM}\sim V_0/(m_{\rm P} v_{\rm DM}^2)$. Thus, the change of momentum imparted to the blob by each parton is
+\begin{equation}
+    \Delta p_1\sim p_{\rm P}(1-\cos \theta)\sim \frac{V_0^2}{m_{\rm P}v_{\rm DM}^3}
+\end{equation}
+and so the drag force on the blob is
+\begin{align}
+    F_{\rm drag}&=\Delta p_1\AA^{-3}(\pi R^2)(v_{\rm DM})\\
+    &=g_{\chi\phi}^2\left(\frac{g_{\phi \rm P}}{10^{-12}}\right)^2\left(\frac{100\keV}{m_\phi}\right)^4\left(\frac{\Lambda_\chi}{\GeV}\right)^6\left(\frac{R}{\AA}\right)^2 \frac{\keV}{\AA}
+\end{align}
+The parameter space that can be probed by a $\keV/\AA$ hydrophone is
+\begin{equation}
+    g_{\chi\phi}^2\left(N_{\rm P}\frac{g_{\phi \rm N}}{10^{-12}}\right)^2\left(\frac{100\keV}{m_\phi}\right)^4\left(\frac{\Lambda_\chi}{\GeV}\right)^6\left(\frac{R}{\AA}\right)^2\gtrsim 1
+\end{equation}
+or, using $M_\chi=N_\chi \Lambda_\chi$ and $N_\chi^{1/3}\sim R/\Lambda_\chi^{-1}$, we can rewrite $R$ in terms of $M_\chi$
+\begin{equation}
+    g_{\chi\phi}^2\left(N_{\rm P}\frac{g_{\phi \rm P}}{10^{-12}}\right)^2\left(\frac{100\keV}{m_\phi}\right)^4\left(\frac{\Lambda_\chi}{\GeV}\right)^{10/3}\left(\frac{M_\chi}{10^{18}\GeV}\right)^{2/3}\gtrsim 1
+\end{equation}
+
+
+
+
+\subsection{MACRO}
+Hydrophone is sensitive to $dE/dx\gtrsim \keV/\AA$. Since there is about one SM probe per $\AA$ along the path of the blob, each collision should impart around a $\keV$ of energy to the detector. A $\keV$ is surely not enough to trigger ionization. But, can MACRO see it through other means?
+
+\subsubsection{Quenching factor}
+When a nucleus receives energy from interaction with the dark matter blob, some fraction of that energy goes directly to the electrons orbiting the nucleus. This is responsible for the processes of scintillation and ionization that may occur upon energy deposition. The fraction is known as the quenching factor, and is dependent on the material being used as well as the nuclear recoil energy itself. To calculate the MACRO bounds on the dark blob, we perform the same calculation as above but with the $dE/dx$ threshold increased by this quenching factor. 
+
+We consider low nuclear recoil energies, going down below the 1 keV level, depending on the size of the blob itself. In the literature, there are two major theoretical models for the quenching factor in this regime. The first is a modification of the Lindhard model described in \citep{Scholz:2016}: $$Q(E_{\rm nr}) = \frac{k g(\epsilon)}{1+k g(\epsilon)}\left(1-\exp\left(-\frac{E_{\rm nr}}{E_0}\right) \right)$$ where $g(\epsilon)=3\epsilon^{0.15}+0.7\epsilon^{0.6}+\epsilon$ and $\epsilon=11.5Z^{-7/3}E_{\rm nr}$. Note the addition of the exponential "adiabatic" factor to the Lindberg model in order to match the data at low energies. The same paper fits this function to obtain values for the free parameters of $k=0.1789$ and $E_0=0.16 \text{ keV}$. TODO it is not clear whether this fit is for the germanium data only, or whether they account for all data points shown in Figure 6. Also, there may be a temperature dependence (but this has not yet been investigated), and this data is for temperatures of 77 K.
+
+The alternate formulation is described in \citep{Collar:2019}, solely for the CsI scintillator case: $$Q(E_{\rm nr}) = \frac{1}{kB\, (dE/dr)}\left(1-\exp\left(-\frac{E_{\rm nr}}{E_0}\right) \right)$$ In this case, the only $E_{\rm nr}$ dependence is in the adiabatic factor, and the best fit value for $E_0$ is $12.97\text{ keV}$. TODO this is surprisingly three orders of magnitude greater than the comparable value for the germanium case.
+
+
+
+
+
+\subsection{Hydrophone formalism}
+
+\subsubsection{Signal}
+
+A dark blob passing through a dense medium would deposit energy at a rate $dE/dx$, found in Section *, along the line traced by its trajectory. This excess-energy line would act as a source of radially propagating sound waves, which we could try to detect. Naturally, the farther it is radially from the blob's trajectory the weaker will the pressure pulse be. Now the question is: given a block of material (e.g. water, ice, or even rock) how many equally separated hydrophones do we need in order to detect sufficiently strong pressure signals?
+
+Ref \cite{Learned:1978iv} has worked out the resulting pressure profile due to an infinitely-thin line source for a given $dE/dx$. They found that at a distance $R$ from the line, the Fourier transformed pressure is given by
+\begin{equation}
+    \tilde{P}(\omega, R)\approx \sqrt{\frac{\pi\omega v_{\rm s}}{2 R}}A\frac{dE}{dx}e^{i\omega R/v_{\rm s}}\quad \text{ for } \omega \frac{R}{v_{\rm s}}\gg 1\label{Ptilde}
+\end{equation}
+where $v_{\rm s}$ is the speed of sound and $A=\beta/(4\pi C_{\rm p})$, with $\beta$ and $C_{\rm p}$ the volume expansivity and specific heat at constant pressure of the medium. Fourier transforming back \eqref{Ptilde} would give us a pressure pulse that is singular at time $t=R/v_{\rm s}$. Clearly, this singularity stems from our infinitely thin idealization of the source; we expect the wave equation from which \eqref{Ptilde} is derived to break down at a small but finite distance from the source and must be replaced by a more correct microscopic description where the pressure is regularized. In the Fourier space, this means $\tilde{P}(\omega, R)$ would not increase indefinitely as suggested by \eqref{Ptilde}, but instead cut off at some frequency $\omega_{\rm max}$ where the wave equation starts to break down. 
+
+Generally speaking, due to various forms of dissipation, a sound wave propagating in a medium would attenuate over a frequency-dependent length scale $L_{\rm att}(\omega)$, which is usually shorter for lower frequencies. Hence, by the time the pressure pulse reaches a detector located at a distance $R$ away from the blob's trajectory, the high-frequency part of the pressure spectrum with $L_{\rm att}(\omega)\lesssim R$ would have attenuated away. For cases of our interest, the cut-offs due to attenuation always occur at much lower frequencies than the $\omega_{\rm max}$ mentioned earlier, and so there is no need to study the breakdown of the wave equation. Now, to find the pressure profile in the time domain, we can simply introduce an exponential suppression factor $e^{-R/L_{\rm att}(\omega)}$ in \eqref{Ptilde} to account for attenuation\footnote{This will give a simpler expression of pressure in time domain than if we put a hard cut off at a given frequency.} and inverse Fourier transform the resulting expression
+\begin{align}
+    P(t,R)&\approx \sqrt{\frac{\pi v_{\rm s}}{2R}}\frac{dE}{dx}\int_0^{\infty} d\omega\sqrt{\omega} e^{i\omega (R/v_{\rm s}-t)}e^{-R/L_{\rm att}(\omega)}\nonumber\\
+    &\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\frac{\omega_{\rm att}^{3/2}(R)}{\left[1+\omega_{att}(R)^2(t-R/v_{\rm s})^2\right]^{3/4}}
+\end{align}
+where $\omega_{\rm att}(R)$ is the frequency whose attenuation length is $R$. We found that the peak pressure in water is
+\begin{align}
+    P_{\rm peak}(R)&\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\omega_{\rm att}(R)^{3/2}\nonumber\\
+    &\sim 10^{-5}\text{ Pa} \left(\frac{dE/dx}{\keV/\AA}\right)\left(\frac{100\text{ m}}{R}\right)^{5/4}
+\end{align}
+where we have used 
+\begin{equation}
+    \omega_{\rm att}(R)\sim 100 \text{ kHz} \left(\frac{R}{1\text{ km}}\right)^{-1/2}
+\end{equation}
+for pure water \cite{Lahmann:2017hsh}.
+
+
+
+
+\subsubsection{Noise}
+
+
+
+\subsection{Other media: glaciers and rocks}
+
+With this formalism for the pressure of acoustic waves caused by dark blob energy deposition, we can consider experiments where the blobs pass through media other than water. Two promising candidates are the ice found in glaciers on the poles (so-called "glacierphones") and rock samples found throughout the Earth's surface. Compared to water, the only major difference in material properties are the different attenuation lengths (as a function of the frequency of the acoustic wave).
+
+The case of glacial ice is addressed by \citep{Price:2006}. They find that at frequencies $\gtrsim 10^3 \text{ Hz}$, the attenuation length is a constant value $\gtrapprox 5 \text{ km}$ depending on the temperature of the ice and the grain diameter. This is a substantial improvement over water, for which attenuation lengths are $\sim 10^2 \text{ m}$ depending on temperature.
+
+The same paper also addresses "salt domes", which are large collections of NaCl. Here, typical values for attenuation length in the 10 kHz regime lie between 1 and 100 km depending on the precise frequency. These numbers are also influenced by the grain size of the salt crystal. Note that the dearth of experimental data for both ice and salt attenuation lengths results in uncertainty as large as a factor of two.
+
+The case of rock more generally, however, is much less promising. There is some evidence \citep{Buckingham:1997} that there is great variation in attenuation lengths even between rock samples that appear identical, hindering attempts to design experiments relying in part on this information. This appears to be a consequence of "memory" in rocks; in other words, the history of the forces experienced by the rock may be responsible for the high degree of variability. Other factors include the porosity of the rocks, the degree of water saturation, the rock structure itself, etc.
+
+\subsection{Parameter space}
+Existing constraints:
+\begin{itemize}
+    \item For $m_\phi<m_\mu\sim 100\MeV$, Meson decays exclude $g_{\phi\rm N}>10^{-6}$ \citep{Grabowska:2018lnd}.
+    \item For $m_\phi<30\MeV$, SN1986A excludes $3\times 10^{-10}<g_{\phi \rm N}<3\times 10^{-7}$ \cite{Grabowska:2018lnd}.
+    \item For $m_\phi\lesssim 100\eV$, long range force experiments exclude $g_{\phi\rm N}\lesssim 10^{-12} (m_\phi/\eV)^3$\cite{Grabowska:2018lnd}.
+    \item Our calculation works when 
+\end{itemize}
+
+
+
+
+
+\section{Terrestrial Search for Mini Black Holes}
+Pieces:
+\begin{itemize}
+\item 
+\end{itemize}
+
+If the dark matter were made of black holes, the non-observation of $\gamma$-ray from their Hawking radiations puts a lower bound on the dark matter mass $M_\chi\gtrsim 10^{15}$g (lighter black holes would have evaporated before now). This bound makes it practically impossible to detect black hole dark matter with terrestrial experiments, as it requires $M_\chi\lesssim 10^{9}$g for there to be $\gtrsim 1$ dark matter blobs passing through the Earth per year\footnote{Number of events=$(\rho_{\rm DM}/m_\chi)\times(\pi R_{\rm E}^2)\times v_{\rm DM}\times 1 \text{ year}> 1$}. Considering the fact that the size $L$ of our dark matter detector will most likely be much smaller than $R_{\rm E}$, this limitation may get worse by a factor of $(L/R_{\rm E})^2$. For example, for a $(100\text{ m})^2$ detector we need $M_\chi\lesssim 0.1\text{ g}$ in order to see $\gtrsim 1$ events per year.
+
+The possibility of black hole evaporating through Hawking radiation is so widely accepted now that it is almost an established fact. However, since all attempts at resolving the black hole information paradox have either completely failed or lead to some sort of inconsistencies, we probably should not regard black hole evaporation as an established fact. Ref. \cite{Kaplan:2018dqx} proposed that there could be a shell of density $\rho\sim m_{pl}^4$ (a firewall) near the event horizon of a black hole that may allow for a different decay mechanism, through an explosion of an unstable shell rather than Hawking radiation, which may mess up the bounds on black hole dark matter mass.
+
+We are interested in black hole dark matter with masses lying in the range $10^{-5}\text{ g}\lesssim M_\chi\lesssim 10^{15}\text{ g}$. The upper bound comes from the black hole evaporation bound that leaves this side of the mass range largely unexplored, and the lower bound comes from \textcolor{blue}{requiring $r_s>\ell_{\rm pl}$}. \textcolor{blue}{These black holes are very tiny: $\ell_{\rm pl}\lesssim r_s\lesssim 1\text{ fm}$ (found using $r_s\sim M_\chi/m_{\rm pl}^2$).} How do we detect such tiny black holes on Earth? Possibly with hydrophone.
+
+A black hole passing a distance $r$ from a nucleus imparts an impulse of $$\Delta p_1 = F \Delta t = \frac{G M_\chi m_N}{r^2} \cdot \frac{r}{v_{\rm DM}} = \frac{G M_\chi m_N}{v_{\rm DM} r}$$
+This results in an energy deposition of $$\Delta K_1 = \frac{\Delta p_1 p_{\rm th}}{m_N} + \frac{(\Delta p_1)^2}{2 m_N} \sim \frac{\Delta p_1 p_{\rm th}}{m_N}$$
+The second term is negligible for $r \gtrsim 10^{-13} \text{ m}$ since $$p_\text{th}^2 = m_N k_B T \implies p_\text{th} \sim 10^{-5} \text{GeV}$$
+Then the pressure change can be estimated as
+\begin{align*}
+    \Delta P = n_{H_2O} k_B T = \frac{dK}{dV} &\sim \Delta K_1 n_{H_2O} \\
+    &\sim \frac{p_\text{th}}{m_N} \frac{1}{M_\text{pl}^2} \frac{M_\chi m_N}{v_{\rm DM} r} \frac{1}{\AA^3} \\
+    &\sim 10^{-4} \text{ Pa} \left( \frac{M_\chi}{10^9\text {g}} \right) \left( \frac{100 \text{ m}}{r} \right)
+\end{align*}
+
+% \textcolor{blue}{It takes around $R_{\rm E}/v_{\rm DM}\sim 100\text{ s}$ for a BHDM to pass through the Earth. During this time, the speed of the BHDM barely changes as $g_{\rm E}\times 100\text{ s}$ is clearly far smaller than $v_{\rm DM}$. During the transit, the BHDM accelerates nuclei at distances $\sim r$ from its trajectory by $\delta v\sim (GM_\chi/r^2)\times (r/v_{\rm DM})$ towards the trajectory. These accelerated nuclei will bump into one another and thermalize. The total energy taken away from the BHDM is given by} 
+
+
+\section{Can dark matter spark fire on grass lands?}
+Combustion is a surface phenomenon that relies on the presence of oxygen to get going, i.e. need an atmosphere. This makes Earth unique.
+
+A common combustion phenomenon is a wildfire, which is an uncontrolled fire with vegetation as the fuel source. While most wildfires are caused by human negligence, they can be set off by natural causes too (such as lightning or volcanic eruption). The risk of a fire being ignited and spreading is determined by various environmental factors such as the humidity, wind speed, cloud cover, etc. Grasslands, being devoid of shade, are often the sites of ignition. 
+
+In this project we consider constraints on dark matter from knowledge of the frequency of wildfires. Many dark matter models posit dark particles that interact with the standard model (perhaps through a mediator), and so in principle may deposit enough energy to ignite wildfires while passing through grasslands on the Earth's surface. This is unlike other particles that bombard the Earth's surface, such as cosmic ray muons or solar photons and neutrinos, which do not deposit sufficient energy to ignite a fire despite being more energetic and numerous than the dark matter particles.
+
+The specific steps involved are to: \begin{enumerate}
+    \item Determine the probability that a dark matter particle passing through grasslands deposits enough energy to \emph{ignite} a fire. This will depend on the properties of the dark matter (size, mass, etc) as well as those of the grass itself (notably ignitability).
+    \item Determine the probability that an ignition event caused by dark matter will \emph{catch fire and spread} to a size where the wildfire is observable. This will depend on the size and energy of the region that is ignited by the dark matter, properties of the grass itself (such as density), as well as environmental characteristics like wind speed and humidity.
+    \item Investigate the detectability of (small-scale) wildfires and estimate the expected frequency due to causes other than dark matter. Compare with the observed frequency and hence set bounds on dark matter properties.
+\end{enumerate}
+
+
+
+
+%\nocite{*}
+
+\newpage
+\bibliography{references}
+\bibliographystyle{unsrt}
+%\bibliographystyle{h-physrev} 
+
+
+
+\end{document}
