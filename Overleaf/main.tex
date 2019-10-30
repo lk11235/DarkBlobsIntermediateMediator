@@ -79,15 +79,15 @@
 \maketitle
 
 
-
 \tableofcontents
+
+
 \section{Questions / To think about}
 \begin{itemize}
 \item Contributions from DM-nucleon vs DM-electron interactions to energy deposition.
 \item Ref. \cite{Grabowska:2018lnd} says the maximum momentum transfer that can be exchanged between $\chi$ and a nucleon is $\text{min}(\Lambda_\chi,m_{\rm N}v_{\rm DM})$ for form factor reasons. Does this still apply in our case? \textcolor{blue}{Seems to only apply for $\Delta p\gg \Lambda_\chi$.}
 \item The momentum $p$ of an object is highly frame dependent (in a non-relativistic way), which means that its de Broglie wavelength $\lambda\sim p^{-1}$ is frame dependent in a similar way. This seems weird.
 \end{itemize}
- 
  
  
 \section{Useful Heuristics}
@@ -198,19 +198,26 @@ where $v_{\rm s}$ is the speed of sound and $A=\beta/(4\pi C_{\rm p})$, with $\b
 Generally speaking, due to various forms of dissipation, a sound wave propagating in a medium would attenuate over a frequency-dependent length scale $L_{\rm att}(\omega)$, which is usually shorter for lower frequencies. Hence, by the time the pressure pulse reaches a detector located at a distance $R$ away from the blob's trajectory, the high-frequency part of the pressure spectrum with $L_{\rm att}(\omega)\lesssim R$ would have attenuated away. For cases of our interest, the cut-offs due to attenuation always occur at much lower frequencies than the $\omega_{\rm max}$ mentioned earlier, and so there is no need to study the breakdown of the wave equation. Now, to find the pressure profile in the time domain, we can simply introduce an exponential suppression factor $e^{-R/L_{\rm att}(\omega)}$ in \eqref{Ptilde} to account for attenuation\footnote{This will give a simpler expression of pressure in time domain than if we put a hard cut off at a given frequency.} and inverse Fourier transform the resulting expression
 \begin{align}
     P(t,R)&\approx \sqrt{\frac{\pi v_{\rm s}}{2R}}\frac{dE}{dx}\int_0^{\infty} d\omega\sqrt{\omega} e^{i\omega (R/v_{\rm s}-t)}e^{-R/L_{\rm att}(\omega)}\nonumber\\
-    &\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\frac{\omega_{\rm att}^{3/2}(R)}{\left[1+\omega_{att}(R)^2(t-R/v_{\rm s})^2\right]^{3/4}}
+    &\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\frac{\omega_*^{3/2}(R)}{\left[1+\omega_*(R)^2(t-R/v_{\rm s})^2\right]^{3/4}}
 \end{align}
-where $\omega_{\rm att}(R)$ is the frequency whose attenuation length is $R$. We found that the peak pressure in water is
-\begin{align}
-    P_{\rm peak}(R)&\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\omega_{\rm att}(R)^{3/2}\nonumber\\
-    &\sim 10^{-5}\text{ Pa} \left(\frac{dE/dx}{\keV/\AA}\right)\left(\frac{100\text{ m}}{R}\right)^{5/4}
-\end{align}
-where we have used 
+with
+\begin{equation}
+    \omega_*=\text{min}\left(\omega_{\rm att}(R), \omega_{\text{BW}}\right)
+\end{equation}
+where $\omega_{\rm att}(R)$ is the frequency whose attenuation length is $R$ and $\omega_{\rm BW}$ is the frequency upper bound or bandwidth of the hydrophone (they are usually of the same order). For pure water \cite{Lahmann:2017hsh}
 \begin{equation}
     \omega_{\rm att}(R)\sim 100 \text{ kHz} \left(\frac{R}{1\text{ km}}\right)^{-1/2}
 \end{equation}
-for pure water \cite{Lahmann:2017hsh}.
-
+It seems more likely that $\omega_{\rm BW}\ll \omega_{\rm att}(R)$ for currently available hydrophones. In that case, the peak pressure is given by
+\begin{align}
+    P_{\rm peak}(R)&\sim A\frac{dE}{dx}\sqrt{\frac{v_{\rm s}}{R}}\omega_{*}(R)^{3/2}\nonumber\\
+    &\sim 10^{-5}\text{ Pa} \left(\frac{dE/dx}{\keV/\AA}\right)\left(\frac{100\text{ m}}{R}\right)^{1/2}\left(\frac{\omega_{\rm BW}}{100\text{ kHz}}\right)^{3/2}
+\end{align}
+The sensitivities of hydrophones are typically reported in terms of pressure/sqrt(bandwidth), so let us re-express the above in terms of that
+\begin{align}
+    \frac{P_{\rm peak}(R)}{\sqrt{\omega_{\rm BW}}}\sim \sim 10^{-7}\frac{\text{ Pa}}{\sqrt{\text{Hz}}} \left(\frac{dE/dx}{\keV/\AA}\right)\left(\frac{100\text{ m}}{R}\right)^{1/2}\left(\frac{\omega_{\rm BW}}{100\text{ kHz}}\right)^{1/2}
+\end{align}
+The noise level of a typical hydrophone at $1-100\text{ kHz}$ is around $100\mu\text{Pa}/\sqrt{\text{Hz}}$.
 
 
 
